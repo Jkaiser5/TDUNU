@@ -1,17 +1,15 @@
 package POLYGLOT.MS.TEST.Security.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import POLYGLOT.MS.TEST.Security.model.AccessModel;
+import jakarta.security.auth.message.AuthException;
 
 public interface AuthService {
 
-    List<AccessModel> findAll();
-
-    Optional<AccessModel> findById(int id);
-
-    Boolean validatedCredentials (String UserName, String Password);
+    Boolean validatedCredentials (String UserName, String Password) throws AuthException;
 
     List<AccessModel> getAcces();
+
+
 }
